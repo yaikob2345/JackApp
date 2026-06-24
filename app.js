@@ -394,13 +394,18 @@ function openPremiumModal() {
     
     // Update payment info from config
     if (typeof PREMIUM_CONFIG !== 'undefined') {
+        // Telebirr info
+        document.getElementById('telebirr-name').innerText = PREMIUM_CONFIG.telebirr.accountName;
         document.getElementById('telebirr-number').innerText = PREMIUM_CONFIG.telebirr.number;
+        
+        // Awash Bank info
+        document.getElementById('awash-name').innerText = PREMIUM_CONFIG.awashBank.accountName;
         document.getElementById('awash-number').innerText = PREMIUM_CONFIG.awashBank.accountNumber;
+        document.getElementById('awash-branch').innerText = PREMIUM_CONFIG.awashBank.branch;
     }
     
     updateAttemptsDisplay();
 }
-
 function closePremiumModal() {
     document.getElementById('premium-modal').classList.add('hidden');
 }
